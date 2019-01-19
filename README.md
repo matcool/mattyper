@@ -1,2 +1,2 @@
-# mattyper
-Incredible typing game!
+# MatTyper
+Incredible solo typing game!
