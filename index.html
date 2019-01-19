@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<title>MatTyper!</title>
-		<link href="https://fonts.googleapis.com/css?family=Faster+One|Contrail+One" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Faster+One|Contrail+One|Bangers" rel="stylesheet">
 		<style>
 			body {
 				background: #333;
@@ -31,13 +31,40 @@
 				border-radius: 5%;
 				box-shadow: 5px 5px 10px #111;
 			}
+
+			@keyframes epic {
+				0% {
+					border-radius: 30px;
+				}
+				50% {
+					border-radius: 25px;
+				}
+				100% {
+					border-radius: 30px;
+				}
+			}
+
+			.button {
+				width: 100px;
+				height: 60px;
+				background-color: #fcb400;
+				animation: epic 2s infinite;
+				animation-timing-function: ease-in;
+				text-align: center;
+				line-height: 60px;
+				font-family: 'Bangers';
+				font-size: 2.5em;
+				color: #222;
+				margin: 0 auto;
+				margin-top: -0.5em;
+			}
 		</style>
 	</head>
 	<body>
 		<div style="height:3em"></div>
 		<h1 align="center" class="title"><i>MatTyper</i></h1>
 		<p align="center" class="subtitle"><i>The <u>advanced</u> <span style="color:#f00">FAST</span> typing game!</i></p>
-		<div style="height:4em"></div>
+		<div class="button">PLAY!</div>
 		<p align="center" class="longtext">Are you tired of being the slowest typer of all? Well, you'll LOVE MatTyper with it's highly advanced typing system, which will guarantuee that you'll improve by 300%!</p>
 		<img src="chart.png" id="chart">
 		<p align="center" class="longtext" style="font-size:0.8em"><i>WPM Tests done on <a href="https://github.com/matcool" style="color:#bbc">mat</a> on TypeRacer© and on MatTyper™</i></p>
