@@ -1,0 +1,72 @@
+body {
+    background: #333;
+}
+.title {
+    font-family: 'Faster One';
+    font-size:5em;
+    color: #fcb400;
+}
+.subtitle {
+    font-family: 'Contrail One';
+    font-size:2em;
+    color: #fff;
+}
+.longtext {
+    font-family: 'Arial';
+    font-size:1em;
+    color:#bbb;
+}
+#chart {
+    display:block;
+    width:33%;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 5%;
+    box-shadow: 5px 5px 10px #111;
+}
+
+@keyframes epic {
+    0% {
+        border-radius: 30px;
+    }
+    50% {
+        border-radius: 25px;
+    }
+    100% {
+        border-radius: 30px;
+    }
+}
+
+.button {
+    width: 100px;
+    height: 60px;
+    background-color: #fcb400;
+    animation: epic 2s infinite;
+    animation-timing-function: ease-in;
+    text-align: center;
+    line-height: 60px;
+    font-family: 'Bangers';
+    font-size: 2.5em;
+    color: #222;
+    margin: 0 auto;
+    /*margin-top: -0.5em;*/
+    cursor: pointer;
+    margin-bottom: 3em;
+}
+.button:hover {
+    background-color: #fccf5d;
+}
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+#text {
+    margin-top: 1em;
+    height: 3em;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
