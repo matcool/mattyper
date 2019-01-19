@@ -11,6 +11,7 @@ function setup() {
     txt = document.getElementById('text');
     txt.autocomplete = "off";
     txt.disabled = true;
+    startText = "Press start to start!"
 }
 
 function draw() {
@@ -21,6 +22,7 @@ function draw() {
     if (!started) {
         textAlign(CENTER, CENTER);
         textSize(50);
+        fill(0);
         text(startText, width / 2, height / 2);
     }
     if (started) {
@@ -30,6 +32,8 @@ function draw() {
             return;
         }
 
+        drawUpcoming();
+
         let r = /^(?:mat|ma|m) ?/;
         let m = txt.value.match(r);
         if (txt.value.length > 0 && (m == null || m[0] != txt.value)) {
@@ -37,7 +41,34 @@ function draw() {
         } else {
             txt.style.background = "#fff";
         }
-        text(timeElapsed, 100, 200);
+        let minutes = floor(timeElapsed/60);
+        let seconds = timeElapsed % 60;
+        textAlign(CENTER,CENTER);
+        textSize(30);
+        fill(100);
+        text(minutes+':'+'0'.charAt(seconds.toString().length-1)+seconds,width/2,height-50);
+    }
+}
+
+function drawUpcoming() {
+    textAlign(CENTER, CENTER);
+    textSize(50);
+    fill(0);
+    let lastX = width/2-(textWidth('m')*1.5);
+    for (let i = 0; i < 3; i++) {
+        let char = "mat".charAt(i);
+        if (txt.value.length >= i+1) {
+            if (txt.value.startsWith('mat'.slice(0,i+1))) {
+                fill(0,100,0);
+            } else {
+                fill(200,0,0);
+            }
+        } else {
+            fill(0);
+        }
+        let cWidth = textWidth(char);
+        text(char,lastX+cWidth,height/2);
+        lastX += cWidth+5;
     }
 }
 
@@ -67,8 +98,8 @@ function end() {
     txt.disabled = true;
     txt.value = "";
     startText = "Calculating WPM...";
-    sleep(random(500,1000)).then(() => {
-        startText = "Your WPM is: "+totalwords*60/time;
+    sleep(random(500, 1000)).then(() => {
+        startText = "Your WPM is: " + totalwords * 60 / time;
     })
 }
 
